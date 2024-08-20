@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video to PDF Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { margin-top: 50px; }
+        .container { max-width: 600px; }
+        .drop-zone { border: 2px dashed #ccc; border-radius: 5px; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Convert Video to PDF</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="video">Select Video</label>
+                <input type="file" class="form-control" id="video" name="video" required>
+            </div>
+            <div class="form-group">
+                <label for="fps">Frames per Second (FPS)</label>
+                <input type="number" class="form-control" id="fps" name="fps" min="1" value="20">
+            </div>
+            <button type="submit" class="btn btn-primary">Convert to PDF</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('#video').addEventListener('change', function() {
+            document.querySelector('form').submit();
+        });
+    </script>
+</body>
+</html>
