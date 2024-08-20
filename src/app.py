@@ -79,4 +79,6 @@ def download_file(filename):
     return "File not found", 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use the port defined by Render or default to port 10000
+    port = int(os.environ.get('PORT', 10000))
+    app.run(debug=True, host='0.0.0.0', port=port)
